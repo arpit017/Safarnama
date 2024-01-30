@@ -56,7 +56,7 @@ speed='0.65s'
 emptyColor='gray.200'
 color='red.500'
 size='xl'
-ml="200%"
+ml={{base:"40%", md:"140%",lg:"200%"}}
 />:data.length>0 && data.map((ele)=>{
   return <div>
     <Myblogelement ele={ele} setDel={setDel} del={del} />

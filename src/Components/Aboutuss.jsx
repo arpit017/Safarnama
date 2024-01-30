@@ -19,6 +19,7 @@ const Aboutuss = () => {
       border={"none"}
       marginTop={"30"}
       direction={{ base: "column", sm: "row" }}
+      
       overflow="hidden"
       variant="outline"
       width={"70%"}

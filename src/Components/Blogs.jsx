@@ -9,6 +9,7 @@ import {
   Center,
   InputGroup,
   InputLeftElement,
+  Spinner,
 } from "@chakra-ui/react";
 import Grid8 from "./Grid8";
 import SearchBox from "./SearchBox";
@@ -21,7 +22,8 @@ import { BlogElement } from "./BlogElement";
 import { Pagination } from "./Pagination";
 import { IconButton } from "@chakra-ui/react";
 import { SearchIcon } from "@chakra-ui/icons";
-import { UseDispatch, useDispatch } from "react-redux";
+import { UseDispatch, useDispatch, useSelector } from "react-redux";
+import { UseSelector } from "react-redux";
 export const Blogs = () => {
   const [data, setData] = useState([]);
   const [permanentdata, setPermanentData] = useState([]);
@@ -30,6 +32,9 @@ export const Blogs = () => {
   const [filterVal, setFilterVal] = useState(null);
   const dispatch = useDispatch();
   const [search, setSearch] = useState(null);
+  const loading=useSelector((data)=>{
+    return data.loading
+  })
 
   var url = `https://blog-backend-cl3f.onrender.com/blogs?page=${page}`;
 
@@ -149,15 +154,28 @@ export const Blogs = () => {
         </InputGroup>
       </Flex>
       <Box px={{ base: 4, md: 8, lg: 14, xl: 16 }} py={8}>
-        <SimpleGrid columns={{ base: 1, sm: 2, md: 3, lg: 4, xl: 4 }} gap={"4"}>
-          {data.length > 0 &&
+        
+        
+          
+          <SimpleGrid columns={{ base: 1, sm: 2, md: 3, lg: 4, xl: 4 }} gap={"4"}>
+          { 
+           
+            loading?<Spinner
+            thickness='4px'
+            speed='0.65s'
+            emptyColor='gray.200'
+            color='red.500'
+            size='xl'
+            
+          />: data.length > 0 &&
             data.map((ele) => {
               return (
                 <div>
                   <BlogElement ele={ele} />
                 </div>
               );
-            })}
+            })
+        }
         </SimpleGrid>
       </Box>
       <Center>

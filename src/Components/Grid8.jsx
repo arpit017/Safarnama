@@ -48,14 +48,25 @@ const Grid8 = () => {
   return (
     <Grid
     border={"none"}
-    width={"70%"}
-    h='200px'
-    templateRows='repeat(2, 1fr)'
-    templateColumns='repeat(4, 1fr)'
+    width={{ base: '100%', sm: '70%' }}
+    
+    // h='200px'
+    // templateRows='repeat(2, 1fr)'
+    templateColumns={{ base: 'repeat(2, 1fr)', sm: 'repeat(2, 1fr)', md: 'repeat(3, 1fr)', lg: 'repeat(4, 1fr)' }}
     gap={1}
-    marginLeft="15%"  
+    // marginLeft="15%"  
+    m="auto"
     marginTop="65"  
     direction={{ base: 'column', sm: 'row' }}
+
+    // border="none"
+    // width={{ base: '100%', sm: '70%' }}
+    // templateRows={{ base: 'repeat(2, 1fr)', sm: 'none' }}
+    // templateColumns={{ base: 'none', sm: 'repeat(4, 1fr)' }}
+    // gap={1}
+    // marginLeft={{ base: '0', sm: '15%' }}
+    // marginTop={{ base: '0', sm: '65px' }}
+    // direction={{ base: 'column', sm: 'row' }}
     >
     
     {arr.map((item)=>{

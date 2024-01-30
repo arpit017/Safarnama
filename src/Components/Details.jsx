@@ -68,19 +68,22 @@ export const Details = () => {
         <Progress value={100} size="xs" colorScheme="red" />
       </Box>
       {/* --------------------------------------------------> */}
-      <Flex mt="10" height="100vh" overflowY="auto" bg="#FEEBC8">
+      <Flex mt="10" height="100vh" overflowY="auto" bg="#FEEBC8" direction={{ base: "column", md: "row" }}>
         <VStack
           spacing="2"
-          paddingLeft={"2%"}
-          paddingTop={"2%"}
-          alignItems={"initial"}
+          paddingLeft="2%"
+          paddingTop="2%"
+          alignItems={{ base: "initial", md: "center" }}
+
           textAlign={"initial"}
           bg="#EDFDFD"
-          width="25%"
-          position="sticky"
+          width={{ base: "100%", md: "25%" }}
+          position={{ base: "100%", md: "sticky" }}
           top="0"
           zIndex="1000"
+          flexDirection={{ lg: "column", md: "column",sm:"row" }} 
         >
+           <Box width="100%">
           <Text fontSize="4xl" fontWeight="bold">
             Contents
           </Text>
@@ -99,12 +102,14 @@ export const Details = () => {
           <Text fontSize="xl" fontWeight="bold">
             5.Safety and Health Tips
           </Text>
+          </Box>
           {/* Add your other VStack items here */}
           <Spacer />
-          <Box boxSize="sm" width={"80%"}>
+          <Box  width={"100%"}>
             <Image
               src="https://cdn.pixabay.com/photo/2020/04/09/14/42/girls-5021801_640.jpg"
               alt="Dan Abramov"
+              width="90%"
             />
             <Text fontSize="xl" fontWeight="normal" fontStyle={"italic"} mt="2">
               "Travel: where the journey becomes the destination, and every step
@@ -118,7 +123,7 @@ export const Details = () => {
 
         <Box
           boxSize="md"
-          width={"75%"}
+          width={{ base: "100%", md: "75%" }}
           alignItems="center"
           alignContent={"center"}
         >
@@ -126,7 +131,7 @@ export const Details = () => {
             {blog.heading}
           </Text>
 
-          <Image objectFit={"cover"} boxSize="70%" m="auto" src={blog.image} />
+          <Image objectFit={"cover"} boxSize="70%" m="auto"  src={blog.image} />
 
           <Heading m="4">Overview</Heading>
           <Text
@@ -188,11 +193,11 @@ export const Details = () => {
               Moments Captured:
             </Text>
 
-            <Box w="100%" m="auto">
+            <Box w="100%" >
               <DetailsImage />
             </Box>
 
-            <Text fontSize={"2xl"} mt="-40">
+            <Text fontSize={"2xl"} mt={{base:"-80%",md:"-30%"}}>
               Budget Travel Tips:
             </Text>
             <Text>

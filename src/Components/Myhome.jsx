@@ -8,16 +8,9 @@ import Aboutuss from './Aboutuss'
 import Footer from './Footer'
 import Services from './Services'
 
-// let obj =  {
-//   imageUrl:'https://thumbs.dreamstime.com/z/plane-icon-red-black-colors-isolated-white-passenger-aircraft-symbol-wings-tail-presenting-fast-mean-93462216.jpg',
-//    title :"Kana package"
-// }
-
 const Myhome = () => {
-
-
   return (
-  <Box rowGap={"30"}>
+  <Box >
     <Box 
       
       backgroundImage="url('https://images.pexels.com/photos/4476397/pexels-photo-4476397.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')"
@@ -50,7 +43,10 @@ const Myhome = () => {
   </CardBody>
   <CardFooter  >
     {/* <Button colorScheme='blue'>View here</Button> */}
-    <Grid display={"flex"} gap="1"  >
+    <Grid display="flex"
+      gap={{ base: 1, sm: 2, md: 3, lg: 4 }} // Adjust gap based on your preference
+      flexDirection={{ base: 'column', sm: 'row', md: 'row', lg: 'row' }} // Adjust flexDirection based on your preference
+      width="100%"  >
     <CustomCard imageUrl={"https://img.freepik.com/premium-photo/traveler-hiking-with-backpacks-ai-technology-generated-image_1112-12297.jpg?size=626&ext=jpg"} title={"Wanderlust Adventures"}/>
     <CustomCard imageUrl={"https://img.freepik.com/premium-vector/travelling-couple-logo-going-go-vacation-concept-illustration_194708-1762.jpg?w=740"} title={"Journey Mates"}/>
     <CustomCard imageUrl={"https://img.freepik.com/premium-vector/extreme-hike-wild-mountain-view-nature-mountaineering-sport-lifestyle-concept_94477-754.jpg?size=626&ext=jpg&ga=GA1.2.1864615653.1685698960&semt=ais"} title={"Globe Trek Partners"}/>

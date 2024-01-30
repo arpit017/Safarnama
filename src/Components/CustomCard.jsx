@@ -13,12 +13,14 @@ const CustomCard = ({ imageUrl, title }) => {
       borderRadius="md"
       bg="#dd6b20"
       color={"white"}
-      
+      width="100%"
+     
     >
       <Image
         objectFit="cover"
-        width= "37%"
-        maxWidth={{ base: '37%', sm: '200px' }}
+       
+        width={{ base: '100%', sm: '37%' }}
+        
         src={imageUrl}
         alt={title}
       />
