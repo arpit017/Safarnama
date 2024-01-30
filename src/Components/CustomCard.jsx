@@ -5,7 +5,7 @@ const CustomCard = ({ imageUrl, title }) => {
   return (
 
     <Box
-       
+      
       display="flex"
       flexDirection={{ base: 'column', sm: 'row' }}
       overflow="hidden"
@@ -13,14 +13,15 @@ const CustomCard = ({ imageUrl, title }) => {
       borderRadius="md"
       bg="#dd6b20"
       color={"white"}
-      width="100%"
-     
+      width={{base:"80%",md:"100%"}}
+      m="auto"
+      // height={{base:"20vh",sm:"13vh"}}
     >
       <Image
         objectFit="cover"
        
         width={{ base: '100%', sm: '37%' }}
-        
+        // height={{base:"5vh",sm:"13vh"}}
         src={imageUrl}
         alt={title}
       />

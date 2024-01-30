@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Box, Button, Flex, IconButton, Menu, MenuButton, MenuItem ,MenuList} from "@chakra-ui/react";
+import { Box, Button, Flex, IconButton, Menu, MenuButton, MenuItem ,MenuList, Spacer} from "@chakra-ui/react";
 import { useSelector, useDispatch } from "react-redux";
 import { HamburgerIcon } from '@chakra-ui/icons';
 const Navbar = () => {
@@ -20,13 +20,15 @@ const Navbar = () => {
 
   return (
     <Flex
-      marginLeft="10%"
+      // marginLeft="10%"
       align="center"
-      justify="space-between"
+      justify={"space-between"}
       color={"white"}
       padding="1rem"
       bg=""
       width={"80%"}
+      m="auto"
+      
     >
       <Box display="flex" width="10%">
         <Button
@@ -42,8 +44,8 @@ const Navbar = () => {
 
 {/* //-----------------------------------------------------------------> */}
 
-<Box margin="auto" >
-     <Box display={{ base: 'flex', md: 'none' }}> 
+<Box  >
+     <Box display={{ base: 'flex', md: 'none' }} > 
         <Menu >
         <MenuButton
     as={IconButton}
@@ -81,7 +83,7 @@ const Navbar = () => {
         </Box>  
 {/* //-----------------------------------------------------------------> */}
 {/* margin="auto" */}
-      <Box display={{ base: 'none', md: 'flex' }}>
+      <Box display={{ base: 'none', md: 'flex' }} margin="auto">
         <Button
           as={Link}
           to="/"
@@ -143,24 +145,26 @@ const Navbar = () => {
             variant="ghost"
             mx="0.5rem"
             textDecoration={"none"}
+            
           >
             Login
           </Button>
         )}
+         
       </Box>
-      </Box>
-      
-      <Box display="flex" width="10%">
+        </Box>
+        <Box display={{base:"none",md:"flex"}} width="10%" >
         <Button
           as={Link}
           to="#"
           variant="ghost"
           mx="0.2rem"
           colorScheme="white"
-        >
+          >
           <h5>Hi ! {name}</h5>
         </Button>
       </Box>
+     
     </Flex>
   );
 };

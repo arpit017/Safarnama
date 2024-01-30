@@ -52,7 +52,7 @@ const Grid8 = () => {
     
     // h='200px'
     // templateRows='repeat(2, 1fr)'
-    templateColumns={{ base: 'repeat(2, 1fr)', sm: 'repeat(2, 1fr)', md: 'repeat(3, 1fr)', lg: 'repeat(4, 1fr)' }}
+    templateColumns={{ base: 'repeat(2, 1fr)', sm: 'repeat(3, 1fr)', md: 'repeat(3, 1fr)', lg: 'repeat(4, 1fr)' }}
     gap={1}
     // marginLeft="15%"  
     m="auto"
